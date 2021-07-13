@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Trending{% endblock title %}
+{% block body %}
+<div class="container my-3">
+<h1 class="my-4 text-center">Trending</h1>
+      <div class="row">
+          {% for trend in trend%}
+          <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+        <img src="{{trend.img_url}}" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h3 class="card-title">{{trend.name}}</h3>
+                <p class="card-text"><b>Price</b> : {{trend.price}}</p>
+                <p class="card-text"><b>Stock</b> : {{trend.stock}}</p>
+                 <p class="card-text">{{trend.description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/purchase/" class="btn btn-primary ">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          {%endfor%}
+        </div>
+    </div>
+{% endblock body %}

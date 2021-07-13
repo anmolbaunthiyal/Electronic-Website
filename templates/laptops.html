@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Laptops{% endblock title %}
+{% block body %}
+<div class="container my-3">
+<h1 class="my-4 text-center">Laptops</h1>
+      <div class="row">
+          {% for laptops in laptops %}
+          <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+        <img src="{{laptops.img_url}}" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h3 class="card-title">{{laptops.name}}</h3>
+                <p class="card-text"><b>Price</b> : {{laptops.price}}</p>
+                 <p class="card-text"><b>Stock</b> : {{laptops.stock}}</p>
+                 <p class="card-text">{{laptops.description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/purchase/" class="btn btn-primary ">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          {%endfor%}
+        </div>
+    </div>
+{% endblock body %}
